@@ -1,6 +1,8 @@
 import React from "react";
-import { Card, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Card, Col, Container, ListGroup, Row, Button } from "react-bootstrap";
 import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import AdminRoute from "../../AdminRoute/AdminRoute";
 import AddProduct from "../AddAProduct/AddProduct";
 import DashboardHome from "../DashboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
@@ -12,37 +14,53 @@ import Review from "../Review/Review";
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
+  const { admin, logOut } = useAuth();
   return (
     <div>
-      <Container>
+      <Container className="mt-5">
         <Row>
           <Col xs={12} md={3}>
-            <Card style={{ width: "18rem" }}>
+            <Card>
               <Card.Header>Dashboard</Card.Header>
               <ListGroup variant="flush">
+                {admin ? (
+                  <>
+                    <ListGroup.Item>
+                      <Link to={`${url}/manageAllOrders`}>
+                        Manage All Orders
+                      </Link>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Link to={`${url}/addAProduct`}> Add A Product </Link>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Link to={`${url}/manageProducts`}>Manage Products </Link>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Link to={`${url}/makeAdmin`}> Make Admin </Link>
+                    </ListGroup.Item>
+                  </>
+                ) : (
+                  <>
+                    <ListGroup.Item>
+                      <Link to={`${url}/pay`}> Pay </Link>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Link to={`${url}/myOrder`}> My Order </Link>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Link to={`${url}/review`}> Review </Link>
+                    </ListGroup.Item>
+                  </>
+                )}
                 <ListGroup.Item>
-                  <Link to={`${url}/pay`}> Pay </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}/myOrder`}> My Order </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}/review`}> Review </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}/manageAllOrders`}> Manage All Orders </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}/addAProduct`}> Add A Product </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}/manageProducts`}>Manage Products </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}/makeAdmin`}> Make Admin </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link to={`${url}`}> Logout </Link>
+                  <Button
+                    variant="danger"
+                    className="custom-btn"
+                    onClick={logOut}
+                  >
+                    <Link to={`${url}`}> Logout </Link>
+                  </Button>
                 </ListGroup.Item>
               </ListGroup>
             </Card>
@@ -61,18 +79,18 @@ const Dashboard = () => {
               <Route path={`${path}/review`}>
                 <Review></Review>
               </Route>
-              <Route path={`${path}/manageAllOrders`}>
+              <AdminRoute path={`${path}/manageAllOrders`}>
                 <ManageAllOrders></ManageAllOrders>
-              </Route>
-              <Route path={`${path}/addAProduct`}>
+              </AdminRoute>
+              <AdminRoute path={`${path}/addAProduct`}>
                 <AddProduct></AddProduct>
-              </Route>
-              <Route path={`${path}/manageProducts`}>
+              </AdminRoute>
+              <AdminRoute path={`${path}/manageProducts`}>
                 <ManageProducts></ManageProducts>
-              </Route>
-              <Route path={`${path}/makeAdmin`}>
+              </AdminRoute>
+              <AdminRoute path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>
-              </Route>
+              </AdminRoute>
             </Switch>
           </Col>
         </Row>

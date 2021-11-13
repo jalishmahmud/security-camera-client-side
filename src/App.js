@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import Navigation from "./pages/Shared/Navigation/Navigation";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./pages/PrivatreRoute/PrivateRoute";
+import PurchaseProduct from "./pages/Home/PurchaseProduct/PurchaseProduct";
 function App() {
   return (
     <AuthProvider>
@@ -23,15 +24,18 @@ function App() {
           <PrivateRoute path="/allCctv">
             <ExploreAllCctv></ExploreAllCctv>
           </PrivateRoute>
+          <PrivateRoute path="/purchase/:productId">
+            <PurchaseProduct></PurchaseProduct>
+          </PrivateRoute>
           <Route exact path="/login">
             <Login></Login>
           </Route>
           <Route exact path="/register">
             <Register></Register>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>
           </Route>
