@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home/Home";
 import ExploreAllCctv from "./pages/AllCctv/ExploreAllCctv/ExploreAllCctv";
 import Login from "./pages/Login/Login/Login";
@@ -9,6 +9,7 @@ import Navigation from "./pages/Shared/Navigation/Navigation";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./pages/PrivatreRoute/PrivateRoute";
 import PurchaseProduct from "./pages/Home/PurchaseProduct/PurchaseProduct";
+import Footer from "./pages/Shared/Footer/Footer";
 function App() {
   return (
     <AuthProvider>
@@ -21,9 +22,9 @@ function App() {
           <Route exact path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/allCctv">
+          <Route path="/allCctv">
             <ExploreAllCctv></ExploreAllCctv>
-          </PrivateRoute>
+          </Route>
           <PrivateRoute path="/purchase/:productId">
             <PurchaseProduct></PurchaseProduct>
           </PrivateRoute>
@@ -40,6 +41,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </AuthProvider>
   );

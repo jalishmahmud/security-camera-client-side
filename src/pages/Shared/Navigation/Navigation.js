@@ -27,9 +27,11 @@ const Navigation = () => {
           <Nav.Link as={Link} to="/allCctv">
             Explore All CCTV
           </Nav.Link>
-          <Nav.Link as={Link} to="/dashboard">
-            Dashboard
-          </Nav.Link>
+          {user.email && (
+            <Nav.Link as={Link} to="/dashboard">
+              Dashboard
+            </Nav.Link>
+          )}
           {user.email ? (
             <Button onClick={logOut} className="custom-btn" variant="danger">
               Logout
