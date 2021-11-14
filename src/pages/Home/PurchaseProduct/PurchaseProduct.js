@@ -49,9 +49,9 @@ const PurchaseProduct = () => {
             <div>
               <h3>{cameraName}</h3>
               <h5 className="my-4">
-                Price: <span className="text-primary">{price} Tk</span>
+                Price: <span className="sub-title">{price} Tk</span>
               </h5>
-              <h6 className="text-primary">Stock: {stock}</h6>
+              <h6 className="sub-title">Stock: {stock}</h6>
               <h6>Warranty: {warranty}</h6>
             </div>
             {/*  order form */}

@@ -36,7 +36,7 @@ const AddProduct = () => {
           <input
             className="form-control mb-3 mt-2"
             placeholder="Product Name"
-            {...register("cameraName")}
+            {...register("cameraName", { required: true })}
           />
 
           <span>Price</span>
@@ -44,7 +44,7 @@ const AddProduct = () => {
             className="form-control mb-3 mt-2"
             placeholder="Price"
             type="number"
-            {...register("price")}
+            {...register("price", { required: true })}
           />
 
           <span>Stock</span>
@@ -52,7 +52,7 @@ const AddProduct = () => {
             className="form-control mb-3 mt-2"
             placeholder="Stoke"
             type="number"
-            {...register("stock")}
+            {...register("stock", { required: true })}
           />
 
           <span>Warranty</span>
@@ -87,7 +87,7 @@ const AddProduct = () => {
           <input
             className="form-control mb-3 mt-2"
             placeholder="Image url"
-            {...register("img")}
+            {...register("img", { required: true })}
           />
 
           <input

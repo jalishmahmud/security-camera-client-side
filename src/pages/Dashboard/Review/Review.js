@@ -50,7 +50,7 @@ const Review = () => {
             className="form-control mb-3 mt-2"
             defaultValue="5"
             type="number"
-            min="1"
+            min="0"
             max="5"
             {...register("rating")}
           />

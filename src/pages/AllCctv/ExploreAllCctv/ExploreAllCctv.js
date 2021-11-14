@@ -12,7 +12,7 @@ const ExploreAllCctv = () => {
   return (
     <div>
       <div>
-        <Container>
+        <Container className="mb-5">
           <h2 className="mt-5 text-center">All CCTVs</h2>
           <h6 className="text-center mb-4 sub-title">
             Find out which one best for you

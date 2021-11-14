@@ -45,10 +45,18 @@ const MakeAdmin = () => {
     <div>
       <h4 className="mb-3">Make Admin</h4>
       <Form onSubmit={handleMakeAdmin}>
+        <Row>
+          <Col sx="auto">
+            <h6 className="mb-4">
+              Please Note: Only register customer/user can be admin if you
+              allow.
+            </h6>
+          </Col>
+        </Row>
         <Row className="align-items-center">
           <Col xs="auto">
             <Form.Label htmlFor="inlineFormInputGroup" visuallyHidden>
-              User Email
+              Registered User/Customer Email
             </Form.Label>
             <InputGroup className="mb-2">
               <InputGroup.Text>@</InputGroup.Text>
@@ -81,7 +89,7 @@ const MakeAdmin = () => {
             )}
             {adminError && (
               <Alert className="my-3" variant="danger">
-                Sorry! invalid user.
+                Sorry ! This is not a registered user/customer email.
               </Alert>
             )}
           </Col>

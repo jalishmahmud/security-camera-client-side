@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShippingFast } from "@fortawesome/free-solid-svg-icons";
 import { faHeadphonesAlt } from "@fortawesome/free-solid-svg-icons";
 import { faMoneyCheckAlt } from "@fortawesome/free-solid-svg-icons";
-const shipping = <FontAwesomeIcon icon={faShippingFast} />;
-const phone = <FontAwesomeIcon icon={faHeadphonesAlt} />;
-const moneyback = <FontAwesomeIcon icon={faMoneyCheckAlt} />;
 
 const OurServices = () => {
+  const shipping = <FontAwesomeIcon icon={faShippingFast} />;
+  const phone = <FontAwesomeIcon icon={faHeadphonesAlt} />;
+  const moneyBack = <FontAwesomeIcon icon={faMoneyCheckAlt} />;
   return (
     <div className="py-3">
       <Container>
@@ -39,7 +39,7 @@ const OurServices = () => {
           <Col className="p-2 pt-3 mb-4 rounded shadow-sm" xs={12} md={4}>
             <Row>
               <Col className="d-flex justify-content-center" xs={3}>
-                <span className="custom-icon">{moneyback}</span>
+                <span className="custom-icon">{moneyBack}</span>
               </Col>
               <Col xs={9}>
                 <h6>MONEY BACK GUARANTEE </h6>

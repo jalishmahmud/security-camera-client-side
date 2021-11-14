@@ -17,11 +17,13 @@ const Dashboard = () => {
   const { admin, logOut } = useAuth();
   return (
     <div>
-      <Container className="mt-5">
+      <Container className="my-5 custom-nav">
         <Row>
           <Col xs={12} md={3}>
             <Card>
-              <Card.Header>Dashboard</Card.Header>
+              <Card.Header>
+                <h5 className="mt-1">Dashboard</h5>
+              </Card.Header>
               <ListGroup variant="flush">
                 {admin ? (
                   <>
@@ -49,7 +51,7 @@ const Dashboard = () => {
                       <Link to={`${url}/myOrder`}> My Order </Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <Link to={`${url}/review`}> Review </Link>
+                      <Link to={`${url}/review`}> Reviews </Link>
                     </ListGroup.Item>
                   </>
                 )}
