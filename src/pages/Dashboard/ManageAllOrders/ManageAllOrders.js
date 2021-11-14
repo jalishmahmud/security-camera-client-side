@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
-import useAuth from "../../../hooks/useAuth";
 
 const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [reRender, setReRender] = useState(true);
-  const { user } = useAuth();
   useEffect(() => {
     fetch(`https://obscure-crag-25487.herokuapp.com/orders`)
       .then((res) => res.json())

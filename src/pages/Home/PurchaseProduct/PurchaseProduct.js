@@ -15,7 +15,7 @@ const PurchaseProduct = () => {
     fetch(`https://obscure-crag-25487.herokuapp.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, []);
+  }, [productId]);
   const date = new Date();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {

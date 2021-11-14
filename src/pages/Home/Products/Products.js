@@ -11,9 +11,9 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div className="my-5">
-      <h2 className="text-center">Our Products</h2>
-      <h6 className="text-center mb-4">Find out all products</h6>
+    <div className="my-3">
+      <h2 className="text-center">Our Popular CCTVs</h2>
+      <h6 className="text-center mb-4 sub-title">Find out which one for you</h6>
       <Container>
         <Row>
           {products.slice(0, 6).map((product) => (

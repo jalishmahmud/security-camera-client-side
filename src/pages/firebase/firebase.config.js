@@ -1,9 +1,9 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBVMW0aBhTQbUqq7DO01aLYgry3s_o3fPo",
-  authDomain: "security-camera-54c1d.firebaseapp.com",
-  projectId: "security-camera-54c1d",
-  storageBucket: "security-camera-54c1d.appspot.com",
-  messagingSenderId: "472463561009",
-  appId: "1:472463561009:web:1088a097a83d7bb7536010",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 export default firebaseConfig;

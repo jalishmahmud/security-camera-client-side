@@ -31,7 +31,7 @@
   transition: all 0.3s ease-in-out;
 }
 .footer-content ul li a:hover {
-  color: #be17df;
+  color: #ff3333;
 }
 .footer-content span {
   font-size: 14px;
@@ -44,7 +44,7 @@
   transition: all 0.3s ease-in-out;
 }
 .footer-content span:hover {
-  border: 1px solid #be17df;
+  border: 1px solid #ff3333;
 }
 .copyrhgit {
   color: #fff;

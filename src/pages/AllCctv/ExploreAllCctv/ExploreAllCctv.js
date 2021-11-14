@@ -13,7 +13,10 @@ const ExploreAllCctv = () => {
     <div>
       <div>
         <Container>
-          <h2 className="mt-5 text-center">All CCTV</h2>
+          <h2 className="mt-5 text-center">All CCTVs</h2>
+          <h6 className="text-center mb-4 sub-title">
+            Find out which one best for you
+          </h6>
           <Row>
             {products.map((product) => (
               <Product key={product._id} product={product}></Product>

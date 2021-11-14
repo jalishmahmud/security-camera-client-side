@@ -85,7 +85,7 @@ const useFirebase = () => {
       setIsLoading(false);
     });
     return unsubscribed;
-  }, []);
+  }, [auth]);
 
   // save user
   const saveUser = (email, displayName, method) => {

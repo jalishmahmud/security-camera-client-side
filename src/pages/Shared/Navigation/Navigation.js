@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
 import "./Navigation.css";
 import logo from "../../../images/logo.png";
@@ -26,6 +27,9 @@ const Navigation = () => {
           </Nav.Link>
           <Nav.Link as={Link} to="/allCctv">
             Explore All CCTV
+          </Nav.Link>
+          <Nav.Link as={HashLink} to="/home/#contact-us">
+            Contact
           </Nav.Link>
           {user.email && (
             <Nav.Link as={Link} to="/dashboard">
